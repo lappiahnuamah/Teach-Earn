@@ -7,12 +7,46 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="" type="image/x-icon">
         <link rel="stylesheet" href="">
     </head>
     <body>
-        {% block content %}
-        
-        {% endblock  %}
+            <!-- nav bar section  -->
+            <section class="navbar">
+                <div class="logo">
+                    <a href=""><img src="" alt="a logo"></a>
+                </div>
+                <div class="navlinks">
+                    <ul class="links" id="">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </section>
+            <!-- end of navbar section  -->
+    
+            {% block content %}
+            
+            {% endblock  %}
+
+            <!-- footer section  -->
+            <footer class="footer">
+                <div class="footer-para">
+                    <p>&copy;Copyright|2021|Teach-Earn</p>
+                </div>
+                <div class="footer-links">
+                    <span>
+                        <a href=""><img src="" alt="facebook"></a>
+                        <a href=""><img src="" alt="instagram"></a>
+                        <a href=""><img src="" alt=""></a>
+                    </span>
+                </div>
+
+            </footer>
+            <!-- end of footer section  -->
+
         <script src="" async defer></script>
     </body>
 </html>

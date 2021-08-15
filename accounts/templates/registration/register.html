@@ -1,0 +1,52 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- register section -->
+        <section class="register-section">
+            <div class="register">
+                <h1 class="register-title">Register</h1>
+            </div>
+            <form action="" method="post" class="form">
+
+                <!-- username input box -->
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" placeholder="Enter Username....." id="username">
+                </div>
+
+                <!-- email input box -->
+                <div class="form-group">
+                    <label for="email">Email(Optional):</label>
+                    <input type="email" name="email" placeholder="Enter email....." id="email">
+                </div>
+
+                <!-- telephone input box -->
+                <div class="form-group">
+                    <label for="telephone">Telephone:</label>
+                    <input type="tel" name="telephone" placeholder="Enter telephone....." id="telephone">
+                </div>
+
+                <!-- password input box -->
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Enter password....." id="password">
+                </div>
+
+            
+                <!-- Submit input box -->
+                <div class="form-group">
+                    <input type="submit" name="submit" value="Register" id="submit">
+                </div>
+
+                <!-- Logins links input box -->
+                <div class="form-group">
+                    <span>
+                        <a href="">Forgotten Password?</a> | <a href="">Login</a>
+                    </span>
+                </div>
+
+
+            </form>
+        </section>
+    <!-- end of register section  -->
+{% endblock  %}
