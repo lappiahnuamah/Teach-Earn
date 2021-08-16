@@ -4,23 +4,31 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="" type="image/x-icon">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
     </head>
     <body>
             <!-- nav bar section  -->
             <section class="navbar">
+                <!-- logo -->
                 <div class="logo">
-                    <a href=""><img src="" alt="a logo"></a>
+                    <a href="{% url 'index' %}"><img src="" alt="a logo"></a>
                 </div>
+
+                <!-- search bar  -->
+                <div class="form-group" id="search-bar">
+                    <input type="search" name="search" id="">
+                </div>
+
+                <!-- navigation links -->
                 <div class="navlinks">
                     <ul class="links" id="">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'register' %}">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>
                 </div>
@@ -47,6 +55,6 @@
             </footer>
             <!-- end of footer section  -->
 
-        <script src="" async defer></script>
+        <script src="{% static 'js/index.js' %}" async defer></script>
     </body>
 </html>

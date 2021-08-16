@@ -1,5 +1,6 @@
 {% extends 'registration/base.html' %}
 {% load static %}
+{% block title %}{% endblock %}
 {% block content %}
     <h1>This is the Home Page</h1>
     <!-- main section -->
@@ -8,8 +9,8 @@
                 <h1 class="signup-text">Sign Up</h1>
             </div>
             <div class="sigup-buttons">
-                <button class="button-student">Student</button>
-                <button class="button-student">Tutor</button>
+                <button class="button-student"><a href="#">Student</a> </button>
+                <button class="button-student"><a href="#">Tutor</a></button>
             </div>
         </main>
     <!-- end of main section  -->

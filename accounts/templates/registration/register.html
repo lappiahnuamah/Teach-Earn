@@ -1,5 +1,7 @@
 {% extends 'registration/base.html' %}
 {% load static %}
+{% block title %}{% endblock %}
+
 {% block content %}
     <!-- register section -->
         <section class="register-section">
@@ -41,7 +43,7 @@
                 <!-- Logins links input box -->
                 <div class="form-group">
                     <span>
-                        <a href="">Forgotten Password?</a> | <a href="">Login</a>
+                        <a href="{% url 'forgotten' %}">Forgotten Password?</a> | <a href="{% url 'login' %}">Login</a>
                     </span>
                 </div>
 
