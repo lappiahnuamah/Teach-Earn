@@ -5,15 +5,26 @@
     <!-- main section -->
         <main class="main-content">
             <div class="background-img">
-                <img src="{% static '../../static/images/back2.jpg' %} "  id="background-img" alt="">
-            </div> 
-            <div class="signup">
-                <h1 class="signup-text">Sign Up</h1>
+                <img src="{% static 'images/back2.jpg' %} "  id="background" alt="">
             </div>
-            <div class="sigup-buttons">
-                <button class="button-student"><a href="#">Student</a> </button>
-                <button class="button-student"><a href="#">Tutor</a></button>
+             
+            <div class="contents">
+                <div class="signup">
+                    <h1 class="signup-text">Sign Up</h1>
+                </div>
+                <div class="signup-buttons">
+                    <button class="button-student"><a href="#">Student</a> </button>
+                    <button class="button-student"><a href="#">Tutor</a></button>
+                </div>
             </div>
+
+            <div id="popup-bg">
+                <div id="popup_main_div">
+                    
+                </div>
+            </div>
+            
         </main>
+
     <!-- end of main section  -->
 {% endblock  %}
