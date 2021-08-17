@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* .main-content {
+    max-width: 960px;
+    margin: 0 auto;
+} */
+
+.main-content .background-img #background-img{
+    max-width: 960px;
+    margin: 0 auto;
+}
+a:link {
+    text-decoration: none;
+}
+
+.navbar > .logo > #logo {
+    width: 20px;
+    height: 20px;
+}
+
+.navbar .logo #logo {
+    width: 20px;
+    height: 20px;
+}
