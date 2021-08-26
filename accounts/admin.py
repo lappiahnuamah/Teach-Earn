@@ -1,13 +1,17 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser
+from django.contrib.admin.options import ModelAdmin
+from .models import CustomUser, Student, Teacher
+
+admin.site.register(CustomUser)
 
 
-class CustomUserAdmin(UserAdmin):
-    add_form = CustomUserCreationForm
-    form = CustomUserChangeForm
-    list_display = ['email', 'username']
-    model = CustomUser
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ['user', 'phone_number', 'comment']
 
-admin.site.register(CustomUser, CustomUserAdmin)
+class TeacherAdmin(admin.ModelAdmin):
+    list_display = ['user', 'phone_number']
+
+
+admin.site.register(Student, StudentAdmin)
+
+admin.site.register(Teacher, TeacherAdmin)

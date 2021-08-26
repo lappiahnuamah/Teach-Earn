@@ -1,16 +1,44 @@
+# from django.contrib.auth.forms import UserCreationForm
+from allauth.account.forms import SignupForm
+from django.db import transaction
+from .models import CustomUser, Student, Teacher
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser
 
 
-class CustomUserCreationForm(UserCreationForm):
+class StudentSignUpForm(SignupForm):
     
-    class Meta(UserCreationForm.Meta):
-        model = CustomUser
-        fields = UserCreationForm.Meta.fields
-
-
-class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
-        fields = UserChangeForm.Meta.fields
+
+    @transaction.atomic
+    def save(self, request):
+        user = super(StudentSignUpForm, self).save(request)
+        user.is_student = True
+        user.save()
+        student = Student.objects.create(user=user)
+        student.save()
+        return user
+
+
+class TeacherSignUpForm(SignupForm):
+ 
+    class Meta:
+        model = CustomUser
+
+    @transaction.atomic
+    def save(self, request):
+        user = super(TeacherSignUpForm, self).save(request)
+        user.is_teacher = True
+        user.save()
+        teacher = Teacher.objects.create(user=user)
+        teacher.save()
+        return user
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=30, required=True)
+    password = forms.CharField(max_length=32, widget=forms.PasswordInput)
+
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'password',)

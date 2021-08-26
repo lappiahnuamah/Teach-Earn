@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        header {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{% static "../../static/images/back4.jpg" %}');  */
+            -webkit-background-size: cover;
+            height: 100vh;
+        }
+    </style>
+        <header>
+            <div class="welcome-text">
+                <h1>Welcome to Teach-Earn</h1>
+                <div class="register-box">
+                    <h4>Don't have an account, register as</h4>
+                    <div class="register-box-buttons">
+                        <a href="{% url 'student_register' %}" class="studentbutton">Student</a>
+                        <a href="{% url 'teacher_register' %}" class="teacherbutton">Teacher</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+  
+
+        <hr>
+        <main class="main-content">
+            <section id="about">
+                <h1>About Section</h1>
+            </section>
+            
+            <section id="contact">
+                <h1>Contact Section</h1>
+            </section>
+        </main>
+{% endblock  %}
+
+     
