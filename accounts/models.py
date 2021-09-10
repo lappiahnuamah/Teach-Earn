@@ -20,3 +20,5 @@ class Teacher(models.Model):
         CustomUser, on_delete=models.CASCADE, primary_key=True)
     phone_number = models.CharField(max_length=20)
     hostel = models.CharField(max_length=100)
+
+

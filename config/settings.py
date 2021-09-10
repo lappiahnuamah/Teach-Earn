@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-# import os
+import os
+# import socket
+# socket.getaddrinfo('localhost', 8000)
 from pathlib import Path
 
 #Environment variables
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'pages.apps.PagesConfig',
 
     # 3rd Party
     'django.contrib.sites',
@@ -53,6 +56,7 @@ INSTALLED_APPS = [
     # 3rd Party
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -179,12 +183,20 @@ AUTHENTICATION_BACKENDS = (
 
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'stmp.gmail.com'
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "sandratb2121@gmail.com"
+EMAIL_HOST_PASSWORD = "sandra0504333103"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_USE_SSL = False
+
+
 # EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
 # DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+
+# EMAIL_HOST_USER = "sandratb2121@gmail.com"
+# EMAIL_HOST_PASSWORD = "deofgfebccxcuyyq"
+

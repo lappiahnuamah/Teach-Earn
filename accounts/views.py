@@ -3,7 +3,7 @@ from django.views.generic import CreateView, TemplateView
 from allauth.account.views import SignupView
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
-from .models import CustomUser
+from .models import CustomUser, Teacher
 from .forms import StudentSignUpForm, TeacherSignUpForm, LoginForm
 
 # class SignUpView(generic.CreateView):
@@ -102,3 +102,13 @@ Teacher profile page
 """
 class TeacherProfileView(TemplateView):
     template_name = 'teacher_page.html'
+
+
+
+"""
+Teacher's Profile Page Details
+"""
+class TeacherProfilePageView(TemplateView):
+    model = Teacher
+    template_name = 'teacher_profile.html'
+    context_object_name = 'profile'

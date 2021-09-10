@@ -1,0 +1,17 @@
+{% extends 'base_teacher.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="profile_page text-center">
+        <div class="profile-info">
+            <h1>My Profile</h1>
+            <img src="#" class="img-circle" width="304" height="236">
+        </div>
+        <div class="profile-details">
+            <p>Username: {{profile.user}}</p>
+            <p>Telephone: {{profile}}</p>
+            <p>Email Address: {{profile.emailaddress}}</p>
+        </div>
+        <a href=""><button class="btn-primary">Edit Profile</button></a> 
+    </div>
+{% endblock %}
