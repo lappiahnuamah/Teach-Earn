@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<!-- <h2>Login</h2> -->
+
+{% if msg %}
+  <h3>{{msg}}</h3>
+{% else %}
+
+<form method="POST" class="form-box">
+  {% csrf_token %}
+  <h1>Login</h1>
+  {{ form.as_p }}
+   <button type="submit" class="btn btn-primary">{% trans "Login" %}</button>
+</form>
+{% endif %}
+
+{% endblock content %}

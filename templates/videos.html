@@ -1,0 +1,21 @@
+{% extends 'base_teacher.html' %}
+{% load static %}
+
+{% block content %}
+    <form method="POST" class="form-box">
+     {% csrf_token %}
+     <h1>Upload Course</h1>
+    <input type="text" name="title" placeholder="Enter Video Title here"><br><br>
+    <input type="file" name="video" accept="video/*"><br><br>
+    <button type="submit" class="btn btn-primary"> Upload New Video </button>
+    </form>
+
+<div>
+    {% for video in videos %}
+        <video width="400" height="400" controls >
+            <source src="{{video.video.url}}" type="video/mp4">
+            <b>{{video.title}}</b>
+        </video>
+    {% endfor %}
+</div>
+{% endblock content %}

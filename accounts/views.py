@@ -22,6 +22,13 @@ class HomeView(TemplateView):
     template_name = 'index.html'
 
 
+# """
+# About page
+# """
+# class AboutView(TemplateView):
+#     template_name = 'about.html'
+
+
 """
 Register a person (student or teacher)
 """
