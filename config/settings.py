@@ -10,14 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
-# import socket
-# socket.getaddrinfo('localhost', 8000)
 from pathlib import Path
 
-#Environment variables
-# from dotenv import load_dotenv
-# load_dotenv()
 
 
 
@@ -48,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'pages.apps.PagesConfig',
-    'video_content.apps.VideoContentConfig',
+    'userprofiles.apps.UserprofilesConfig',
 
     # 3rd Party
     'django.contrib.sites',
@@ -57,7 +51,7 @@ INSTALLED_APPS = [
     # 3rd Party
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
+    # 'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -75,7 +69,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / 'templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,10 +134,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = BASE_DIR / 'static'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = (BASE_DIR /"static")
 STATICFILES_DIRS = [
-    # BASE_DIR / 'staticfiles',
-    os.path.join(BASE_DIR, "static_in_project")
+    BASE_DIR / "static_in_project"
 ]
 
 
@@ -155,8 +148,7 @@ STATICFILES_FINDERS = [
 
 # MEDIA FILES
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = BASE_DIR /'media'
 
 
 

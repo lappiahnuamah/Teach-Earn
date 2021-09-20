@@ -3,6 +3,7 @@ from allauth.account.forms import SignupForm
 from django.db import transaction
 from .models import CustomUser, Student, Teacher
 from django import forms
+from userprofiles.models import UserProfile
 
 
 class StudentSignUpForm(SignupForm):
@@ -42,3 +43,11 @@ class LoginForm(forms.Form):
     class Meta:
         model = CustomUser
         fields = ('username', 'password',)
+
+
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('profile_img',)

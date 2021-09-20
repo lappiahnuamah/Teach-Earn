@@ -3,17 +3,11 @@ from django.views.generic import CreateView, TemplateView
 from allauth.account.views import SignupView
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
-from .models import CustomUser, Teacher
-from .forms import StudentSignUpForm, TeacherSignUpForm, LoginForm
-
-# class SignUpView(generic.CreateView):
-#     form_class = UserCreationForm
-#     success_url = reverse_lazy('login')
-#     template_name = 'registration/signup.html'
+from .models import CustomUser, Teacher, Student
+from .forms import StudentSignUpForm, TeacherSignUpForm, LoginForm, ProfileForm
+from django.contrib.auth.decorators import login_required
 
 
-# def index(request):
-#     return render(request, 'registration/index.html', {})
 
 """
 Home page
@@ -22,11 +16,6 @@ class HomeView(TemplateView):
     template_name = 'index.html'
 
 
-# """
-# About page
-# """
-# class AboutView(TemplateView):
-#     template_name = 'about.html'
 
 
 """
@@ -36,6 +25,7 @@ def register(request):
     return render(request, template_name="registration/register.html")
 
 
+
 """
 Student registration form
 """
@@ -43,8 +33,6 @@ class student_register(SignupView):
     model = CustomUser
     form_class = StudentSignUpForm
     success_url = reverse_lazy('verify_account')
-    # redirect_field_name = 'next'
-    # success_url = None
     template_name = 'registration/student_register.html'
 
     def get_context_data(self, **kwargs):
@@ -99,7 +87,7 @@ def login_view(request):
 
 """
 Student profile page
-"""
+""" 
 class StudentProfileView(TemplateView):
     template_name = 'student_page.html'
 
@@ -115,7 +103,21 @@ class TeacherProfileView(TemplateView):
 """
 Teacher's Profile Page Details
 """
-class TeacherProfilePageView(TemplateView):
-    model = Teacher
-    template_name = 'teacher_profile.html'
-    context_object_name = 'profile'
+# class TeacherProfilePageView(TemplateView):
+#     model = Teacher
+#     template_name = 'teacher_profile.html'
+#     context_object_name = 'profile_teacher'
+
+
+"""
+Teacher's Profile Page Details
+"""
+# class StudentProfilePageView(TemplateView):
+#     model = Student
+#     template_name = 'student_profile.html'
+#     context_object_name = 'profile_student'
+
+# def studentprofilepage(request):
+#     profile_form = ProfileForm(instance=request.user.profile_user)
+#     return render(request=request, template_name='my_profile.html', context={"profile_form": profile_form} )
+

@@ -9,8 +9,9 @@ body {
     height: 100%;
     width: 100%;
     color: #dac9c9;
-    background-image: linear-gradient(#02aab0,  #00cdac);
-    background-repeat: no-repeat;
+    /* background-image: linear-gradient(#02aab0,  #00cdac), url('images/');
+    background-repeat: no-repeat; */
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7),  url("../../static_in_project/images/back4.jpg"));
 }
 
 
@@ -503,7 +504,10 @@ input {
   width: 100%;
 }
 
-
+.profile-image {
+  position: relative;
+  left: 25%;
+}
 .profile_page {
   margin: 10px 5px;
 }
@@ -773,3 +777,60 @@ a {
 ====================*/
 
 
+
+/*==================
+ CONTACT SECTION
+====================*/
+
+  #contact {
+    background: #3f51b5;
+  }
+
+  #contact h2 {
+    color: #ffffff;
+  }
+
+  #contact .section-title {
+    padding-bottom: 20px;
+  }
+
+  #contact h2 > small,
+  #contact p,
+  #contact a {
+    color: #f9f9f9;
+  }
+
+  #contact-form {
+    padding: 1em 0;
+  }
+
+  #contact-form .col-md-12,
+  #contact-form .col-md-4 {
+    padding-left: 0;
+  }
+
+  #contact-form .form-control {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: none;
+    margin: 10px 0;
+  }
+
+  #contact-form input {
+    height: 50px;
+  }
+
+  #contact-form input[type='submit'] {
+    border-radius: 50px;
+    border: 1px solid transparent;
+  }
+
+  #contact-form input[type='submit']:hover {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  
+/*==================
+ END OF CONTACT SECTION
+====================*/
