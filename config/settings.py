@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'pages.apps.PagesConfig',
     'userprofiles.apps.UserprofilesConfig',
+    'video_content.apps.VideoContentConfig',
 
     # 3rd Party
     'django.contrib.sites',

@@ -4,6 +4,8 @@ from django.db import transaction
 from .models import CustomUser, Student, Teacher
 from django import forms
 from userprofiles.models import UserProfile
+from video_content.models import Video
+
 
 
 class StudentSignUpForm(SignupForm):
@@ -51,3 +53,9 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('profile_img',)
+
+
+class Video_form(forms.ModelForm):
+    class Meta:
+        model = Video
+        fields=("caption","video")

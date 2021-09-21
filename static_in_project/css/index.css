@@ -6,12 +6,18 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    height: 100%;
+    height: 900px;
     width: 100%;
     color: #dac9c9;
-    /* background-image: linear-gradient(#02aab0,  #00cdac), url('images/');
-    background-repeat: no-repeat; */
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7),  url("../../static_in_project/images/back4.jpg"));
+    background-image: linear-gradient(#02aab0,  #283f3b);
+    background-repeat: no-repeat; 
+    /* background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),  url("../../static_in_project/images/back4.jpg"); */
+}
+
+p {
+  margin-top: 0;
+  font-size: 1.4em;
+  margin-bottom: 1rem;
 }
 
 
@@ -191,7 +197,7 @@ body {
 .register-box {
   width: auto;
   margin: 0 auto;
-  border: 2px solid #000;
+  border: 2px solid #777;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -261,8 +267,10 @@ body {
   -----------------------------------------*/
 
   footer {
+    /* position: relative;
+    top: 900px; */
     background: #000000;
-    padding: 120px 0;
+    padding: 50px 0;
   }
 
   footer .section-title {
@@ -440,23 +448,20 @@ body {
   
   .form-box {
     border: 1px solid #000000;
+    border-radius: 8% 14%;
     background-color: #571428;
+    margin-top: 50px;
     margin-bottom: 60px;
-    /* width: 37.5%; */
     position: relative;
     top: 5%;
     left: 28%;
-    padding: 15px 15px;
-  }
+    height: 450px;
+    padding: 40px 25px;
+}
 
   .form-box .form-box-header {
     text-align: center;
   }
-
-  /* .form-control{
-    width: 100%;
-
-  } */
 
 
  /* Extra small devices (phones, 600px and down) */
@@ -535,7 +540,14 @@ img.img-circle{
 ====================*/
 
 
+.main-content{
+  position: absolute;
+  top: 700px;
+} 
+
+
 #mu-about-us {
+  
   display: inline;
   float: left;
   width: 100%;
