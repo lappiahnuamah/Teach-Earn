@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'accounts',
     'pages.apps.PagesConfig',
     'userprofiles.apps.UserprofilesConfig',
-    'video_content.apps.VideoContentConfig',
 
     # 3rd Party
     'django.contrib.sites',
@@ -149,7 +148,7 @@ STATICFILES_FINDERS = [
 
 # MEDIA FILES
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR /'media'
+MEDIA_ROOT = BASE_DIR /'media/'
 
 
 

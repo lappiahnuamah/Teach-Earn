@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin.options import ModelAdmin
-from .models import CustomUser, Student, Teacher
-from video_content.models import Video
+from .models import CustomUser, Student, Teacher, Video
 
 admin.site.register(CustomUser)
 
@@ -18,3 +17,5 @@ admin.site.register(Student, StudentAdmin)
 admin.site.register(Teacher, TeacherAdmin)
 
 admin.site.register(Video)
+
+

@@ -1,11 +1,10 @@
-# from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from allauth.account.forms import SignupForm
 from django.db import transaction
 from .models import CustomUser, Student, Teacher
 from django import forms
 from userprofiles.models import UserProfile
-from video_content.models import Video
-
+from .models import Video
 
 
 class StudentSignUpForm(SignupForm):
@@ -55,7 +54,8 @@ class ProfileForm(forms.ModelForm):
         fields = ('profile_img',)
 
 
+
 class Video_form(forms.ModelForm):
     class Meta:
         model = Video
-        fields=("caption","video")
+        fields=("caption", "video")

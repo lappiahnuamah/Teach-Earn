@@ -1,17 +1,26 @@
 {% extends 'base_student.html' %}
-{% load static %}
-
+{% block title %}My Profile Page{% endblock  %}
 {% block content %}
-    <div class="profile_page text-center">
-        <div class="profile-info">
-            <h1>My Profile</h1>
-            <img src="#" class="img-circle" width="304" height="236">
+    {% block body %}
+        <div class="profile_page text-center">
+            <div>
+                <img src="{{student_profile.profile_img.url}}" alt="" style="border: 2px solid black; border-radius: 50%; width: 150;">
+            </div>
+            <form enctype="multipart/form-data" method="post" class="form">
+            {% csrf_token %}
+                <input type="file" name="user_img" class="file_class">
+                <div>
+                    <button type="submit" class="btn-primary">submit</button>
+                </div>
+            </form>
+        <div>
+        <div class="profile_page text-center">
+            <div class="profile-details">
+                <p>Username: {{user.username}}</p>
+                <p>Telephone: {{user.phone_number}}</p>
+                <p>Email Address: {{user.email}}</p>
+            </div>
+            <a href="{% url 'students' %}"><button class="btn-primary">Edit Profile</button></a> 
         </div>
-        <div class="profile-details">
-            <p>Username: {{user.username}}</p>
-            <p>Telephone: {{user.phone_number}}</p>
-            <p>Email Address: {{user.email}}</p>
-        </div>
-        <a href=""><button class="btn-primary">Edit Profile</button></a> 
-    </div>
-{% endblock %}
+    {% endblock  %}
+{% endblock  %}

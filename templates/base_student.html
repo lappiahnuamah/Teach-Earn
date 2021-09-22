@@ -30,7 +30,7 @@
                 <a class="nav-link" aria-current="page" href="{% url 'profile' user_id=user.id %}">My Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Courses</a>
+                <a class="nav-link" href="{% url 'students' %}">Courses</a>
               </li>
 
           {% if user.is_authenticated %}

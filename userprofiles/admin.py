@@ -3,4 +3,6 @@ from .models import UserProfile
 
 # Register your models here.
 admin.site.register(UserProfile)
+# admin.site.register(TeacherUserProfile)
+# admin.site.register(StudentUserProfile)
 

@@ -1,10 +1,10 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, HttpResponse
 from django.views.generic import CreateView, TemplateView
 from allauth.account.views import SignupView
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
-from .models import CustomUser, Teacher, Student
-from .forms import StudentSignUpForm, TeacherSignUpForm, LoginForm, ProfileForm
+from .models import CustomUser, Teacher, Student, Video
+from .forms import StudentSignUpForm, TeacherSignUpForm, LoginForm, ProfileForm, Video_form
 from django.contrib.auth.decorators import login_required
 
 
@@ -120,4 +120,21 @@ Teacher's Profile Page Details
 # def studentprofilepage(request):
 #     profile_form = ProfileForm(instance=request.user.profile_user)
 #     return render(request=request, template_name='my_profile.html', context={"profile_form": profile_form} )
+
+
+def coursesforteachers(request): 
+    all_video = Video.objects.all()
+    if request.method == "POST":
+        form=Video_form(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("<h1>Uploaded Successfully</h1>")
+    else:
+        form=Video_form()
+    return render(request, 'videos.html',{"form":form, "all":all_video} )
+
+
+def coursesforstudent(request): 
+    all_video = Video.objects.all()
+    return render(request, 'videos_student.html',{"all":all_video} )
 
